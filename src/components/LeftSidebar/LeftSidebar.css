@@ -1,0 +1,198 @@
+/* Sidebar Container */
+.ls {
+    background: linear-gradient(to bottom, #FFAFBD, #ffc3a0);
+    color: white;
+    /* width: 300px; */
+    /* height: 100vh;  */
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative; /* Important for positioning child elements like sub-menu */
+}
+
+/* Top Navigation Section */
+.ls-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background: #ffafbc;
+    z-index: 10; /* Ensure navigation stays on top */
+}
+
+.logo {
+    max-width: 50px;
+}
+
+.ls-nav h4 {
+    font-family: poppins;
+    font-size: large;
+}
+
+.menu img {
+    max-height: 30px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.menu img:hover {
+    opacity: 1;
+}
+
+/* Search Bar Section */
+.ls-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffffa1;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.ls-search img {
+    width: 18px;
+}
+
+.ls-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    flex: 1;
+}
+
+/* Chat List Section */
+.ls-list {
+    display: flex;
+    flex-direction: column;
+    font-family: poppins;
+    gap: 15px;
+    flex-grow: 1;
+    overflow-y: auto; /* Ensure scrolling in the chat list */
+    padding-right: 10px;
+    max-height: calc(100vh - 200px); /* Restrict max height */
+}
+
+/* Friend Item Styles */
+.friends {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.friends:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.friends img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friends div {
+    display: flex;
+    flex-direction: column;
+}
+
+.friends p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.friends span {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Hide the scrollbar (optional) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Submenu */
+.menu {
+    position: relative;
+}
+
+.menu .sub-menu {
+    position: absolute;
+    top: 100%; /* Position it below the parent menu */
+    right: 0;
+    width: 130px;
+    padding: 15px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100; /* Ensure it appears on top */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu .sub-menu button {
+    background-color: #fc769c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu .sub-menu button:hover {
+    background-color: #ff5777;
+    transform: scale(1.05);
+}
+
+.menu .sub-menu button:focus {
+    outline: 2px solid #fc769c;
+    outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ls {
+        width: 250px;
+    }
+
+    .ls-search input {
+        font-size: 12px;
+    }
+
+    .friends p {
+        font-size: 14px;
+    }
+
+    .friends span {
+        font-size: 12px;
+    }
+}

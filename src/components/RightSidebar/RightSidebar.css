@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Right Sidebar Container */
+.rs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%; /* Full height of the container */
+  background-color: #ffffff;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  overflow: hidden; /* Prevent unwanted overflow */
+}
+
+/* Sticky Profile Section */
+.rs-profile {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.rs-profile img {
+  width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* margin-bottom: 10px;*/
+}
+
+.rs-profile h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+  margin: 5px 0;
+  gap: 8px;
+}
+
+.rs-profile h3 img {
+  width: 16px;
+  height: 16px;
+}
+
+.rs-profile p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Media Section */
+.rs-media {
+  flex: 1; /* Fill remaining vertical space */
+  overflow-y: auto; /* Enable scrolling for media items */
+  padding-right: 10px; /* Add spacing for scrollbar */
+}
+
+.rs-media p {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.rs-media div {
+  display: flex;
+  flex-wrap: wrap; /* Wrap media items to the next row */
+  gap: 10px; /* Space between media items */
+}
+
+.rs-media div img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rs-media div img:hover {
+  transform: scale(1.1);
+}
+
+/* Custom Scrollbar for Media Section */
+.rs-media::-webkit-scrollbar {
+  width: 6px;
+}
+
+.rs-media::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.rs-media::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
